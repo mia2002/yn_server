@@ -1,10 +1,11 @@
 require 'yn_socket_server'
 require 'yn_socket_queue'
 require 'yn_handle_request'
-require 'yaml'
+require 'yn_logo.rb'
 
 class YNServer
 	def self.start(port=2000)
+		YNLogo.logo
 		queue = YNSocketQueue.new
 		thread2 = Thread.new do
 			socket_server = YNSocketServer.new(port,queue)

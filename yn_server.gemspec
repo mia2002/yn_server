@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|  
   s.name        = 'yn_server'  
-  s.version     = '0.1'  
-  s.date        = '2017-03-23'  
+  s.version     = '0.1.1'  
+  s.date        = '2017-03-25'  
   s.summary     = 'Ruby Server!'
   s.description = 'A simple socket server gem'
   s.authors     = ['Yan Ng']  
@@ -15,6 +15,7 @@ Gem::Specification.new do |s|
                         lib/yn_socket_queue.rb
                         lib/yn_socket_server.rb
                         lib/yn_task.rb
+                        lib/yn_logo.rb
                     )
   s.homepage    =  
     'http://rubygems.org/gems/yn_server'  
