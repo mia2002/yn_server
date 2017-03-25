@@ -1,4 +1,4 @@
-require 'yaml'
+# require 'yaml'
 
 # 配置请求路由
 # create by yan
