@@ -52,7 +52,6 @@ class YNHandleRequest
 				route = util.get_method(servlet_url)
 				task = YNTask.new(request)
 				route = "default" if route == nil || route.empty?
-				route = route.empty? ? "default" : route
 				puts "route: #{route}"
 				_result = task.send(route) #动态执行方法
 				client.write(_result)
