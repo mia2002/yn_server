@@ -4,7 +4,7 @@ require 'yn_handle_request'
 require 'yaml'
 
 class YNServer
-	def self.start_server(port=2000)
+	def self.start(port=2000)
 		queue = YNSocketQueue.new
 		thread2 = Thread.new do
 			socket_server = YNSocketServer.new(port,queue)

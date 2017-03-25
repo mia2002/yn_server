@@ -20,10 +20,6 @@ class YNHandleRequest
 				_method,path = client.gets.split
 				puts "url: #{path}"
 				puts "method: #{_method}"
-				if (path=~/.+\.(png|ico|gif)/) != nil
-					client.close
-					next
-				end
 				headers={}
 				while line = client.gets.split(' ',2)
 					break if line[0]==""
@@ -33,7 +29,6 @@ class YNHandleRequest
 				servlet_url = ""
 				if _method.upcase == 'POST'
 					data = client.read(headers["Content-Length"].to_i)
-					puts "data: #{data}"
 					servlet_url = path
 				elsif _method.upcase == 'GET'
 					if path.include? '?'
@@ -45,7 +40,6 @@ class YNHandleRequest
 						servlet_url = path
 					end
 				end
-
 				request = YNRequest.new(data)
 				puts "parameter: #{request.hash}"
 				util = YNRouteUtil.new
